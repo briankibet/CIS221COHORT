@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, inital-scale=1.0">
+ <ttle>Document</ttle>
+ <link rel="stylesheet" href="styles.css"/>
+ <script src="htps://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+</head>
+<body >
+ <div class="weather-app">
+ <header>
+ <div>
+ <h2>
+ Welcome to our Weather applicaton
+ </h2>
+ </div>
+ </header>
+ <main>
+ <div>
+ <form acton="" class="search-form" id="search-form">
+ 
+ <input type="search" name="city" id="city-name" placeholder="Enter city name" 
+required class="form-input"/>
+ 
+ <buton type="submit" class="form-buton">search</buton>
+ </form>
+ </div>
+ 
+ <div class="weather-data">
+ <h3>Paris</h3>
+ <!--
+ <h3>
+ 18 
+ <strong>˚C</strong>
+ 
+ </h3>
+ -->
+ 
+ <div class="weather-app-temperature-container">
+ <div class="" id="weather-app-icon"><img src="htp://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken￾clouds-day.png"
+    alt="not loading" class="weather-app-icon">
+    </div>
+    <div class="weather-app-temperature" id="currentemperaturevalue">12</div>
+    <div class="weatehr-app-unit">°C</div>
+    </div>
+    </div>
+    <div>
+    <p >
+    <span id="currentme">
+    Tuesday
+    
+    14.40
+    
+    ,
+    </span>
+    
+    
+    <span id="weatherdescripton">
+    scatered clouds
+    </span>
+    
+    <br />
+    Humidity : 
+    <span id="Humidity" class="Humidity">
+    66
+    </span>
+    , Wind Speed : 
+    <span id="windspeed">
+    4.3
+    </span>
+    
+    </p>
+    </div>
+    
+    </main>
+    
+    <footer>
+    <div>
+    
+    Coded by <a href="htps://github.com/brian" target="_blank"> BRIAN KIBET </a>
+    
+    and is on<a href="htps://github.com/Rennish/Week7-Weather-API" 
+    target="_blank">Github</a>
+     and hosted by
+     <a href="htps://rennishweatherapp.netlify.app/" target="_blank">Netlify.</a>
+     <br>
+     The design was done using <a href="htps://www.fgma.com/" 
+    target="_blank">Figma</a>
+     
+     </div>
+     </footer>
+     </div>
+     <script src="index.js"></script>
+    </body>
+    </html>
+    functon refreshWeather(currentweather){
+     //document.write(currentweather.data.temperature.current)
+    //let currentTemperature = Math.round(currentweather.data.temperature.current) ; 
+    //document.write(currentTemperature); 
+    //display the temperature
+    let currenteTemperatureValue = document.querySelector("#currentemperaturevalue"); 
+    //currenteTemperatureValue.innerHTML = currentTemperature ; 
+    //this is a shorter way of doing the exact same thing the commented codes do. 
+    currenteTemperatureValue.innerHTML = 
+    Math.round(currentweather.data.temperature.current) ; 
+    //display the weather descripton
+    let weatherDescripton = document.querySelector("#weatherdescripton") ; 
+    weatherDescripton.innerHTML = currentweather.data.conditon.descripton ; 
+    let currentWeatherIcon = document.querySelector("#weather-app-icon"); 
+    currentWeatherIcon.innerHTML = `
+     <img 
+     src="${currentweather.data.conditon.icon_url}"
+     alt = "not loading"
+     class = "weather-app-icon" 
+     /> ` ;console.log(currentweather.data); 
+     //display the humidity 
+     let humidity = document.querySelector("#Humidity"); 
+     humidity.innerHTML = ${currentweather.data.temperature.humidity}%; 
+     //display the wind speed 
+     let windSpeed = document.querySelector("#windspeed"); 
+     windSpeed.innerHTML = `${currentweather.data.wind.speed} knots `; 
+     //display day and tme 
+     let currentTime = document.querySelector("#currentme"); 
+     let date = new Date(currentweather.data.tme * 1000); 
+     currentTime.innerHTML = formatDate(date);
+     }
+     functon formatDate(date){
+      let minutes = date.getMinutes();
+      let hours = date.getHours();
+      let days = ["Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+      ]
+      let day = days[date.getDay()]; 
+      if (minutes <10){
+      minutes = 0${minutes} ; 
+      }
+      
+      }
+    <style>
+       body{
+        background-color: #f9f7fe;
+       }
+       a{
+        color: rgb(123, 3, 123);
+       }
+       header{
+        padding: 0 0 10px 0;
+        border-top: 5px solid rgb(175, 172, 172);
+        text-align: center;
+        text-decoraton: underline;
+       }
+       h3{
+        padding: 40px 0 0 0;
+        border-top: 5px solid rgb(175, 172, 172);
+        font-size: 30px;
+        line-height: 30px;
+        text-transform:capitalize ; 
+       }
+       .weather-app{
+        background-color: rgb(175, 172, 172);
+        max-width: 600px;
+        margin: 100px auto;
+        padding: 30px;
+        border-radius: 30px;}
+       h2{
+        color: rgb(81, 49, 10);
+       }
+       .weather-app-temperature-container{
+        display: fex;
+        padding: 40px 0 0 0; 
+        border-top: 30px solid rgb(175, 172, 172);
+        
+        line-height: 30px;
+        text-transform: capitalize;
+       }
+       .weather-data{
+        display: fex; 
+        justfy-content: space-between;
+       }
+       .weather-app-icon {
+        height: 80px;
+        width: 80px;
+        line-height: 20px;
+        
+        padding-botom: 10px;
+        margin-top: 3px;
+       }
+       .weather-app-temperature {
+        font-size: 80px;
+        margin-lef: 10px;
+        font-weight: bold;
+       }
+       .weatehr-app-unit {
+        margin-top: 16px;
+        font-size: 28px;
+       }
+       .Humidity{
+        color: rgb(123, 3, 123);
+        font-weight: bold;
+       }
+       .form-input{
+        
+        text-decoraton: solid;
+        border: none;
+        width: 70%;
+        border-color: blueviolet;
+        border-radius: 5px;
+       font-size: 20px;
+       padding: 10px 15px;
+      }
+      .form-buton{
+      border: none; 
+      background-color: rgb(123, 3, 123);
+      color: whitesmoke;
+      padding: 10px 15px;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-lef: 5px;
+      border-radius: 9px;
+      }
+      footer{
+       padding: 0 0 10px 0;
+       border-top: 5px solid rgb(175, 172, 172);
+       text-align: center;
+       color: rgba(0, 0, 0, 0.5);
+       font-size: 13px;
+       </style>
+      }
