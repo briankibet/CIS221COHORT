@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Exam App</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>CIM 322</th>
+        </tr>
+        <tr>
+            <td>Mary</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>40</td>
+        </tr>
+        <tr>
+            <td>Average</td>
+            <td>60</td>
+        </tr>
+    </table>
+
+    <p>Thanks for using the Exam App</p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email List Signup</title>
+</head>
+<body>
+    <h1>Please join our email list</h1>
+    <form action="#" method="post">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="example@yahoo.com"><br><br>
+
+        <label for="confirm-email">Confirm Email:</label>
+        <input type="email" id="confirm-email" name="confirm-email" required placeholder="example@yahoo.com"><br><br>
+
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required><br><br>
+
+        <button type="submit">Join our List</button>
+    </form>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Discount Calculator</title>
+    <style>
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Discount Calculator</h1>
+    <form id="discountForm">
+        <
+Service is currently unstable, please give it another try later.
+It looks like you’re describing a form for a product discount calculator. Below is an HTML and JavaScript code snippet that implements this functionality:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Discount Calculator</title>
+    <style>
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Discount Calculator</h1>
+    <form id="discountForm">
+        <label for="originalPrice">Original Price:</label>
+        <input type="number" id="originalPrice" required><br>
+
+        <label for="discountPercentage">Discount Percentage:</label>
+        <input type="number" id="discountPercentage" required><br>
+
+        <label for="discountedAmount">Discounted Amount:</label>
+        <input type="text" id="discountedAmount" readonly><br>
+
+        <label for="discountedPrice">Discounted Price:</label>
+        <input type="text" id="discountedPrice" readonly><br>
+
+        <button type="button" onclick="calculateDiscount()">Calculate</button>
+    </form>
+
+    <script>
+        function calculateDiscount() {
+            const originalPrice = parseFloat(document.getElementById('originalPrice').value);
+            const discountPercentage = parseFloat(document.getElementById('discountPercentage').value);
+
+            if (isNaN(originalPrice) || isNaN(discountPercentage)) {
+                alert("Please enter valid numbers for price and discount.");
+                return;
+            }
+
+            const discountedAmount = (originalPrice * discountPercentage) / 100;
+            const discountedPrice = originalPrice - discountedAmount;
+
+            document.getElementById('discountedAmount').value = discountedAmount.toFixed(2);
+            document.getElementById('discountedPrice').value = discountedPrice.toFixed(2);
+        }
+    </script>
+</body>
+</html>
