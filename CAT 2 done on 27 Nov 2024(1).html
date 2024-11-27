@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Application</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #710554;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.weather-info {
+  text-align: center;
+}
+
+.city-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.temperature {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.forecast table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.forecast th, .forecast td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.forecast th {
+  background-color: #f2f2f2;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Welcome to Our Weather Application</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Enter city name">
+      <button>SEARCH</button>
+    </div>
+    <div class="weather-info">
+      <h2 class="city-name">Paris</h2>
+      <div class="temperature">12°C</div>
+      <div class="description">Partly cloudy</div>
+      <div class="forecast">
+        <h2>Forecast</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+              <th>Sun</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> 🌦️</td>
+              <td> 🌦️</td>
+              <td> 🌦️</td>
+              <td> 🌦️</td>
+              <td> 🌦️</td>
+              <td> 🌦️/</td>
+              <td> 🌦️</td>
+            </tr>
+            <tr>
+              <td>15°C</td>
+              <td>18°C</td>
+              <td>12°C</td>
+              <td>17°C</td>
+              <td>15°C</td>
+              <td>18°C</td>
+              <td>15°C</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <footer>
+        <p>Coded by BRIAN KIBET and is on GitHub and hosted by Netlify</p>
+        <p>Design was done using FIGMA</p>
+    </footer>
+    </div>
+  </div>
+  
+</body>
+</html>
